@@ -19,14 +19,14 @@ main mission independently.
 After its nine months jurney to Mars, MCO was lost beacuse it missed its planned
 altitude ordbit and fell into the Martian atmosphere where it was distroyed.
 
-The problem identified in the NASA Mishap Investigation Board Phase I Report was
-that the MCO failed to use metric units in the coding of a ground software file
-used in trajectory models. Other causes that contributed to the failure of the
+The problem identified in the NASA Mishap Investigation Board Phase I
+Report~\cite{mco-rep} was that the MCO failed to use metric units in the coding
+of a ground software file used in trajectory models. Other causes that contributed to the failure of the
 mission included system engineering, traning and organizational factors.
 
 In order to understand better the circumstances that lead to the failure of this
 mission, we need to take a closer look at the Attitude Control System and
-the fault protection architecture of the MCO\cite{surv-nasa-mars}.
+the fault protection architecture of the MCO~\cite{surv-nasa-mars}.
 
 The MCO's Attitude Control System contained a sun sensor, an inertial
 measurement unit, a star camera and reaction wheels. The MCO was controlable in
@@ -36,7 +36,88 @@ use the gravity force of Mars in order to adjust to the needed velocity which
 could allow it to keep the desired orbit and altitude. The design included
 rocket engine modules which allowed this as well as serving as elements that
 dissipaed any angular momentum which could be accumulated in the reaction
-wheels. 
-\cite{mco-rep}
-\subsection{Mars Reconnaissance Orbiter}
+wheels. The Spacecraft Performance Analysis Software (SPAS) was used to
+calculate the angular momentum desaturation, however it was not using the
+correct units of measures (error in the N to lb-f conversion). This has lead to
+the MCO estimating badly its alttitude and orbit.
+
+The fault protection capabilities were unsatisfying at a number of levels in
+this mission. First of all, there was an error in the human managemnt process.
+The calculation of the automatic momentum desaturation involved a human
+constant, because people where involved in loading the information to servers,
+also in retrieving it from servers and uploinking it to the MCO. The teams
+dealing with the information where not specifically the ones who introduced the
+error, however they could have observed the problem and find a solution to
+solved it. This proves the existance of a fault in the human-system interaction.
+This can be avoided by developing a better system that would allow people to
+asses the correctens of the output data based on the input they are giving. It
+could be a software solution that would act either as verifier (just calculate
+and report the expected results) or as a checker that would identify the
+inconcistency and report it.
+
+The critical problem in the MCO case was the lack of an adequate convertor
+between the Newtons and lb-f. The software used for the MCO was partly carried
+over from another mission (THe Mars Global Surveyor). The privios mission
+considered the convertor, however it was not imported for the MCO mission by mistake. The fault could have been
+avoided if there would have been thorough testing after the importing of the
+already existing software. If the re-used functions would have been inspected
+with attention and tests would have been developed in order to check the correct
+functionality in the new context, the fault could have been discovered and
+solved.
+
+The expectation to have a software system with no bugs or problems is quite
+unrealistic. However this should not affect the success of missions. The MCO was
+already calculating the angular momentum desaturations and would afterwards
+downlinked it to the ground base. At that point the Spacecraft Performance
+Analysis Softer was used to calculate the angular momentum desaturation value
+without making the correct conversion between Newtons and lb-f. Howver, the
+result would be provided to the team in charge and only afterwards the plan for
+the future actions would be uplinked to the spacecraft. In this case, another
+solution for fault avoidance would have been the limitation or elimination of
+the need of the spacecraft to relay on external systems and the human
+intervention. Basically, if the the MCO would be designed as to be able to
+calculate its own position and only then cross check it with the avilable data
+provided by the ground team, it would have been possible to at least notice and
+report the problem.
+
+In order to have a good failure tolerance, it was decided that for future
+spacecrafts it would be advised to use redundant and independent components
+(both software and hardware). In the case of performing the same calculations
+with the use of various software modules it could be possible to identify the
+differences in the values. In the case of multiple such components, a voting
+could be implemented in order to rule out the modules that provide wrong
+results.
+
+Since this case is mainly a failure caused by the inadequate re-use of
+software, it can be stated that such errors can be avoided through the use of
+independent evaluation and validation of the re-used software. The use of
+regression testing~\footnote{http://en.wikipedia.org/wiki/Regression\_testing}
+as well as comparing results to expected outputs can prove helpful.
+\subsection{Mars Reconnaissance Orbiter\cite{mro-nasa}}
+
+The Mars Reconnaissance Orbiter (MRO) was launched on the 12th of August, 2005
+and it was one of the first spacecrafts entering Mars' orbit.
+
+Its journey to Mars lasted seven months and it took six more months afterwards
+in order for it to reach its science orbit. The MRO was created with the purpose
+of tracking changes of the water and dust in Mars' atmosphere. It was also
+supposed to look for more evidence of ancient seas and hot springs and to study
+the climate changes based on Mars' surface minerals. It also serves as a data
+relay station for other missions.
+
+The objectives of the MRO where complex and the probability of failure was high
+because of this. There were multiple things that could go wrong with the
+mission, considering the complexity of its overall goals and functionality
+expectations \cite{mro-mission}.
+
+First of all, the mission was supposed to last about 5.4 years. The system on the spacecraft was supposed
+to have an up-time as close as possible to 100\% during this mission. This is
+hard to achieve because all possible failures need to be prevented or handled
+without losing functionality or precious data.
+
+An analysis of the fault pretection architecture, the effectiveness of this
+architecture as well as a categorization of the fault protection capabilities of
+the MRO are described in detail in \cite{surv-nasa-mars}.
+
+
 \subsection{Mars Exploration Rovers}
