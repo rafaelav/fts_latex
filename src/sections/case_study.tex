@@ -119,5 +119,26 @@ An analysis of the fault pretection architecture, the effectiveness of this
 architecture as well as a categorization of the fault protection capabilities of
 the MRO are described in detail in \cite{surv-nasa-mars}.
 
+In order to assure that no big failures cand occur and that, despite its
+complexity, the system will work accordingly in order to achieve the mission's
+goals, a semi-autonomuos fault protection software (SPIDER - SPacecraft Imbedded
+Distributed Error Response) has been developed for the MRO. It has been
+developed in C-language with the possibility of re-use for any other future
+missions. SPIDER can support redundancy and cross strapping tasks, requirements
+which the MRO is supposed to meet.
+
+Despite it's advanced capabilities and the fact that it acts as a first
+responder to erros and handles most of them, SPIDER was not design to function
+on its own. It still needed help from the ground in order for the system to be
+set back in a normal state for the cases when it entered a safe mode. Also,
+ground operations where needed in case the system did not recognise some
+possibly threatening conditions that could appear. The main advantage of the
+SPIDER is that it can actually prevent the system from entering massive failure
+without the need to wait for the ground crew to notice and react to the
+problems.
+
+FIG - Generic SPIDER Decission process \cite{e-seale}
+
+
 
 \subsection{Mars Exploration Rovers}
