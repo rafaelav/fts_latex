@@ -178,4 +178,81 @@ encountered quite a few failures during the mission (e.g. memory corruption,
 downlink connectivity failure, etc.), it was capable to recover and to achieve
 the mission's goals.
 
-\subsection{Mars Exploration Rovers}
+\subsection{Mars Exploration Rovers\cite{mer-nasa}}
+
+NASA has launched in 2003 the twin rovers, Opportunity and Spirit, with the
+purpose of gaining more insight about past water activity on the red planet and
+if there where, at some point, conditions that could favorite life on our
+neighbor planet. The planned mission was supposed to last for about 3 months
+from the moment the rovers would land. However, they have exceeded any
+expectations both as far as their durability is concerned as well as the
+discoveries they have made.
+
+Spirit has collected evidences that, in the past, Mars was much wetter than we
+see it know. Also, it collected information about the wind on the red planet.
+The rover has been silent as of March 2010 and the ground team has ceased to try
+to contact it since May 2011 when its mission was closed and considered
+complete.
+
+Opportunity has found evidence that Mars could have been capable of sustaining
+microbial life. During its mission it traveled for over 20 km (as of March 2010)
+in its search for a better understanding of the planet. The rover is still
+active (as of 5th November 2013).
+
+An overview of why the fault protection worked so well for these rovers is
+provided in \cite{surv-nasa-mars}.
+
+The rovers needed to enter a into a sleep mode days in order for them to be able
+to recharge their batteries. In this state their CPU would be powered off, but
+the hardware still needed to maintain the safe thermal and power states (the
+temperatures on Mars can be quite extreme - from negative
+107$\,^{\circ}\mathrm{C}$ up to over positive
+30$\,^{\circ}\mathrm{C}$\footnote{http://en.wikipedia.org/wiki/Climate\_of\_Mars}).
+
+Upon waking from the sleep mode, the rovers were expected to start the
+communication without any help from ground operation teams on Earth. As a fault
+protection measure, if during the rover's initialization a server error occured,
+the reset of the system would be postponed for a pre-defined amount of time. A
+software health function was also use in order to check for any lingering or
+suspended tasks. For the communication system, redundancy was used such that, in
+case the high gain antenna would not function properly then the low gain antenna
+would perform its tasks (even if this one had lower data rates it could still be
+enough so that the mission wouldn't be a failure).
+
+The local and system level fault protection can be seen in Fig. \cite{fprot}
+
+FIG. Overview of the surface fault protection
+
+There are more general capabilities of the fault protection architecture used in
+the case of the rovers. First of all, the ground teams can monitor the data
+which the rovers send back (or fail to send back) and can intervene based on the
+type of errors they observe.
+
+Since the rovers have an algorithm that controls autumatically the wake up and
+shutdown procedures, it means that a low energy fault can be avoided. The
+algorithm only allowed the rovers to work when they haved enough energy to do
+this, thus abnormal terminations or uncapability to save data before entering
+sleep mode can were avoided. 
+
+A plus to the fact that the rovers needed to enter sleep mode everyday and
+basically shutdown for a period of time was software
+rejuvenation\footnote{http://en.wikipedia.org/wiki/Software\_aging}. Memory
+leaks could be removed through this process.
+
+The rovers were also tolerant to failure because, for example, in case they did
+not stock up enough energy in order to function properly, than the system would
+not allow the to wake up from the sleep mode and by doing this it avoided the
+failure of letting them work without appropriate power. Aside from this, they
+benefited from the presence of a navigation algorithm that looked for possible
+hazards on the rovers' paths and tried to avoid them by chosing between posible
+identified routes.
+
+Even thogh testign was developed previous to mission launch, complete fault
+avoidance could not be guaranteed. The ground team could identify that after 17
+sols (Martian days) one of the rovers was rebooting over and over. They managed
+to identify the problems as being the fact that when a file needed to be delited
+from RAM, even though the link to it was lost, the sizse of the table of
+contents of the RAM was not decreased so the system managed to consume all the
+RAM space available after some time. The problem was solved from teh ground when
+the team instructed to software to not use the memory. This prevented the
+failure of the mission.
