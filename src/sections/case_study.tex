@@ -139,6 +139,43 @@ problems.
 
 FIG - Generic SPIDER Decission process \cite{e-seale}
 
+The SPIDER ensures that the fault responses are general. For example, if the MRO
+finds itself in a position in which a fault is detected, than it automatically
+switch to a safe mode and interrupt all the uncritical equipment and
+functionality. The system can be turned back to normal functionality from the
+ground level by the team in charge after following a defined protocol.
 
+The SPIDER ensures that the MRO is not affected by fails at any given time, with
+the presumption that only one system can generate failure at a given time. It
+basically tries to ensure that the MRO is completely single-fault tolerant and
+this leads to the robustness and high relability level of the architecture. As
+it was mentioned before, SPIDER was created around the idea of keeping things
+redundant and around the cross strapping concept. Among the redundancy technics
+it uses we can find:
+\begin{itemize}
+\item Block Redundancy - which ensures that a failure can be solved through the
+use of parallel elements
+\item Functional Redundancy - which permits the handling of a failure in various
+ways
+\item Cooperative Redundancy - which permits the division of a system function
+in more elements. This helps by allowing the function to be able to succeed despite
+the probability of having one of its elements fail
+\end{itemize}
+
+The architechture of the SPIDER is hierarchicle. It has three software levels:
+the component level fault protection which is used for communication with the
+MRO hardware, the performance level fault protection which keeps track of the
+performance of each subsystem and the system level fault protection which tries
+to keep failures from happening. Depending on the type of failure, it can be
+handled by the befitting logic. In order to avoid starvation, the higher levels
+in the hierarchy are allowed to call on to the lower levels in order to assign
+them specific tasks, but they cannot take priority of the tasks which
+already are executing in these levels.
+
+The SPIDER has been thorughly tested before being integrated on the MRO, but a
+final proof of its capability was the fact that, even though the MRO has
+encountered quite a few failures during the mission (e.g. memory corruption,
+downlink connectivity failure, etc.), it was capable to recover and to achieve
+the mission's goals.
 
 \subsection{Mars Exploration Rovers}
