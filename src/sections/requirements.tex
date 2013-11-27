@@ -1,1 +1,67 @@
 \section{Requirements for spacecrafts}
+The engineers working on the construction of spacecrafts have to face a
+multitude of requirements which are specific to this domain and cannot be found
+in other, more 'traditional' fields. Thus, in order to properly understand the
+specifics of fault-tolerant approaches used for space-related applications, this
+chapter will briefly describe these requirements.
+
+One of the most important characteristics of this domain is that it deals with a
+lot of uncertainty. While we have a strong understanding of the Earth
+environment (and even surrounding space), moving farther away from our home
+planet brings any ship in an environment where unexpected factors can influence
+a mission. Thus, the ships must be prepared to respond to conditions for which
+it might not have been initialy designed.
+
+Another important factor is the harshness of the environment and the extreme
+conditions present in space which may have dangerous effects. A few examples
+include\cite{req-space-environment}:
+\begin{itemize}
+  \item extremely low or extremely high temperatures (usually due to incoming
+  solar radiation, reflected solar energy or friction when entering a planetary
+  atmosphere) can affect various instruments or compontents
+  \item ionized gas or plasma can charge the surface of a spaceship and
+  disrupt the operation of electrical instruments
+  \item meteoroids and orbital debris may cause damage and affect the structural
+  integrity of ships if hit\footnote{The speed with which a meteoroid or debris
+  are hit can also majorly influence the effects.}
+  \item ionizing radiation consists of high-energy particles that can `travel
+  through spacecraft material and deposit kinetic energy`.
+  \item harmful/toxic substances in the atmosphere of other planets may also
+  cause corosion and affect the proper function of components
+\end{itemize}
+
+Spacecrafts which are travelling far away from Earth also face other issues due
+to operating with limited ground contact (mostly because of large distances to
+our planet). According to \cite{fm-jpl}, these include:
+\begin{itemize}
+  \item Extended periods with no planned contact (1 to 4 weeks)
+  \item Planned contact periods may be short (1 to 2 hours)
+  \item Ground may not show for planned contacts (5\% to 10\%)
+  \item Large one-way light times (minutes to hours)
+  \item Low downlink data rates (10 to 40 bps)
+\end{itemize}
+For example, light travels 2h and 50 minutes to reach Saturn from Earth so
+autonomous operation was required for probes such as Voyager when at such
+distances, as no 'live' commands could be received from earth if any situation
+had occured.
+
+Two other aspects that are characteristic to long-term space missions is that
+there are no humans onboard them (unmaned) and they need to survive without any
+maintenance during the entire mission time, which can last for more than a
+couple of years\footnote{For example, both Voyager 1 and Voyager 2 have been
+active for more than 36 years.}. No spare parts are available and no humans can
+directly intervene to fix any issues that might appear, so the ships have to
+deal with this using other methods (e.g. redundance).
+
+Lastly, we can add a couple of other characteristics of spacecrafts: 
+\begin{itemize}
+  \item power supply is usually limited and the generated energy needs to be
+  divided to all the instruments and components of the ship
+  \item need to keep costs down as all components are extremely expensive to produce
+  \item space usually needs to be restricted and its use optimized
+\end{itemize}
+
+As we have seen, there are a multitude of characteristics of space missions (and
+long-term space missions in particular) and a series of specific requirements,
+all of which need to be taken into account when designing spacecrafts. Thus, all
+of these have direct influence on the fault tolerance mechanisms used.
