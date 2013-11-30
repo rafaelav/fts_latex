@@ -13,7 +13,7 @@ Saturn. They both continued on to chart the far edges of our solar system.
 There are quite a few works who take a closer look at the Voyager missions.
 These missions have brought humanity an inimaginable boost of knowledge about
 our Solar System and even beyond. R. L. Heacock presents in one of his
-papers\cite{tvs} various engineering aspects of the two spacecrafts.
+papers~\cite{tvs} various engineering aspects of the two spacecrafts.
 
 The two spacecrafts have been launched into space on 20th of August,
 respectively 5th of September in 1977. Their trajectories were controled through
@@ -45,11 +45,143 @@ AACS can be seen in Fig.
 
 FIg. - Block diagram of the AACS
 
+The spacecrafts needs to keep track of its position by using the Sun and a start
+(Canopus). The sensors that keep track of both the Sun and Canopus are block
+redundant in order to ensure that the spacecraft will be able to compute its
+position and that complete failure in doing so would be unlikely. There is,
+additionaly, a periodic callibration of the Sun sensor which allows the keeping
+of accuracy needed in order for the spacecraft to position the scan platform in
+order to point of the remote sensing instruments. In case the sensor that keeps
+track of the Sun position is not working, the spacecraft has an inbuilt solar
+independent power system given by the radio-isotope thermo-electric generators.
+This ensures that even if and when the spacecraft cannot use the Sun as a power
+suply, it can still mentain functionality. Gret amount of testing was done in
+orer to ensure that, in case of an accident at launch time, the radioactive
+material which exists on board the spacecraft would be contained and it would
+not represent any danger. This is possible because the shells that contain the
+plutonion spheres are wrapped in an impregnated graphite yarn which provides a
+good energy absorption in the case of an accident.
+
 Since the spacecraft needed to wait for almost three hours for a response from
 the ground base, it was obvious from the beginning that it would need to have at
-least some operations done autonomous.
+least some operations done autonomous. However, control parameters and even
+control laws can be re-programmed in flight in case it is necessary. This has
+allowed solving several inflight problems that occured through the
+years~\cite{litty}.
 
-\subsection{Cassini-Hygens}
+The computer and control subsystem fault correction and detection routines
+incorporate internal error and power power levels checks, received command and
+transmitted signal loss, spacecrafts manouvre faults, attitude control subsystem
+failures and many others. For example, the command loss routine verifies if any
+commands have been given to the spaceship. A timer is used in order to make
+chekcs to see if commands have reached the spaceship or not. If a command has
+been given and received, than the timer is reset. In case the command is either
+not received or was not given, the command loss rutine stars, meaning that a
+series of reconfigurations are initiated.
+
+A high redundancy of subsystems and hardware was used when designing the two
+spacecrafts. This has proven to be a good safety meassure since the receiver for
+Voyager 2 has mulfunctioned and almost could have caused the failure of the
+mission. However, the problem has been identified and the spacecraft has been
+functioning on the back-up receiver since 1978. The attitude control subsystem
+is made of redundant computers (one of them is a standby which is ready to take
+the other's place if needed). The command and control subsytem also has
+redundancy incorporated in it. However, in this case, the redundant computer
+monitors the functional computer.
+
+A description of the error detection mechanism for the attitude control subsytem
+is given in~\cite{ft-space-avionics}. It consists in:
+\begin{itemize}
+  \item failure of receiving a 'I am healthy' report every 2 seconds by the
+  comand control subsystem
+  \item loss of references to Canopus or the Sun
+  \item failure of re-writting memory every 10 hours
+  \item taking more time to adjust trajectory than expected
+  \item gyro failure
+  \item power supply failure
+  \item parity error on commands received from the command and control subsystem
+  \item unresponsiveness to commands
+  \item incorrect sequance of commans
+\end{itemize}
+
+Voyager 1 and 2 have achieved their goals and surpased them. They have made
+unexpected discoveries (e.g. at least nine active volcanos on
+Io\footnote{http://en.wikipedia.org/wiki/Io\_(moon)}~\cite{tvs}) and are
+currently the most distand human made objects. Voyager 1 is has already left our
+solar
+system\footnote{http://www.space.com/22729-voyager-1-spacecraft-interstellar-space.html}
+and is currently travelling through interstellar space.
+
+\subsection{Cassini-Huygens}
+
+The Cassini-Huygens~\cite{ch-nasa} mission was to study Saturn, its moons and
+its rings. The two names that form the name of the spacecraft are present because
+Cassini represents the NASA\footnote{http://www.nasa.gov/}-suplied spacecraft
+while Hygens represents the lander designed by European Space Agency.
+
+The Huygens probe~\cite{hygens} has landed on Titan on 14th January 2005. It's
+purpose was to make a variety of measurements. It was formed out of various
+subsystems. Among them we can find the ones that are in charge of overseeing the
+mechanical and thermal components, probe-relay data, command and data management
+and electrical power. The states of its subsystems are influenced by the mode in
+which the probe is at a particular moment. The modes it can enter are: cruise,
+coast, entry and decent. Huygens' mission aimed to last for the 2 and a half
+hours it took for it to decent in the athmosphere of Titan.
+
+An interesting description of the fault tolerant design of both the Cassini
+spacecraft and the Huygens probe is given in D.P Siewiorek and P.
+Narasimhan's article~\cite{ft-space-avionics}. 
+
+The Huygens' fault tolerant design was focused on autonomy. This was needed
+because the probe could not have been commanded after its detach from the
+spacecraft. The probe had a completely redundant electrical architecture. The
+software architecture also used redundancy, most specifically it used block
+redundancy. It also uses two identical command and data management units, a
+triply redundant mission timer unit as well as a triply redundant central
+acceleration sensor unit. Huygens also had duble redundant accelerometers and
+double redundant proximity sensors.
+
+The command and data management units have been developed with only small
+diferences which aimed to avoid common-mode failures. They both execute their
+own software as to be able to run on their own, if needed, in order to keep the
+mission afloat. In case there would be a problem that can be generated by the
+temporarily loss of the telemetry link, a fault could be avoided since the two
+replicas have a delay between their telmetry of 6 seconds. Both the two units do
+checks and consider themselves invalid in the case they discover that they have
+a two bit error in the same word in the memory or an under-voltage value of the
+power line.
+
+In order to ensure that the experimental results and collected data are safe,
+Huygens probe is not the only one keeping them in memory. They are, in fact,
+kept as a copy in the Cassini orbiter so that, in any case, they can be
+transmited to the ground team on Earth.
+
+Cassini was the first spacecraft to actually orbit Saturn~\cite{ch-nasa}.
+Cassini's fault protection mechanisms~\cite{cassini} aimed to avoid the
+possibility of having a single point of failure somewhere in the systems which
+formed the orbiter. Other goals the fault protection mechanisms had where to
+make possible the system recovery and reconfiguration from multiple faults, in
+case these faults would take place in regions which were independent.
+
+The approach the Cassini system fault protection has is that it is driven by the
+priority of the faults identified and it can work on the recovery of only one
+fault at the time. More faults can have the same priority assigned to them, but
+they would be served in a first come first served manner. The way in which
+priority was assigned to faults is that the ones which would take the most to be
+solved would be assigned a lower priority while the most time-critical ones
+would have the highest priority~\cite{ft-space-avionics}.
+
+The Cassini orbiter was also eveloped with posibility of self-recovery in mind,
+since it would take awhile before any answer could be transmited back from
+Earth.
+
+The primary mission of the Cassini orbiter ended on 30 June 2008. It did achieve
+all the original goals and then moved on to take on a new mission - to observe
+and gather data about the seasonal changes brought by the Sun's changing angle
+on Saturn. It also continued to study the rings and moons of Saturn, sending
+back to Earth priceless information and knoledge about the seventh planet from
+the Sun~\cite{ch-nasa}.
+
 \subsection{Mars Climate Orbiter}
 Mars Climate Orbiter (MCO)\cite{mco-nasa} was part of the NASA Mars Surveyor
 program which included the Mars Global Surveyor as well as Mars Polar Lander. It
