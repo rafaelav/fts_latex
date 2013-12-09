@@ -1,4 +1,4 @@
-\documentclass[11pt]{article} % Mandatory
+\documentclass[11pt,a4paper]{article} % Mandatory
 \usepackage[T1]{fontenc} % Support for fonts with æøå and other foreign characters.
 \usepackage[utf8]{inputenc} % Support for UTF-8 encoded input documents
 \usepackage{fullpage}
@@ -14,15 +14,49 @@
 \usepackage{makeidx} % For creating indexes
 \usepackage{hyperref} % For using URLs
 \usepackage{xspace} % For adding a space only when necessary.
-\usepackage{todonotes}
+\usepackage{todonotes} % For adding TODOs
+\usepackage{titling} % For modifying subtitle
 
-\title{Fault Tolerant Systems}
-\author{Rafaela Voiculescu, Stefan-Dobrin Cosmin}
-\date{Autumn 2013}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip2em}%
+}
+
+
+\title{Fault Protection for Space Missions}
+\subtitle{02228 - Fault-Tolerant Systems\\
+Autumn 2013}
+\author{
+  Cosmin Stefan-Dobrin\\
+  Technical University of Denmark\\
+  \texttt{s121038}
+  \and
+  Rafaela Voiculescu\\
+  Technical University of Denmark\\
+  \texttt{s120931}
+}
+\date{}
 
 \begin{document}
-\maketitle \newpage
-\tableofcontents \newpage 
+\begin{titlepage}
+\maketitle 
+\thispagestyle{empty}
+\vfill
+\begin{abstract}
+\textit{Space has been a topic of high interest in the past century and the
+space exploration missions have aimed to help new discoveries. The spacecrafts
+used for this purpose have been designed for the unknown, high-risk nature of
+the missions and, thus, fault protection has been an important necessity. This
+paper offers a brief analysis of general approaches and specific implementations
+for fault management architectures used in space exploration missions. }
+\end{abstract}
+\end{titlepage}
+\newpage
+
+\tableofcontents
+
 
 \include{sections/introduction}
 \include{sections/requirements}

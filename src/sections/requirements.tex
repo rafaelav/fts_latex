@@ -1,19 +1,20 @@
-\section{Requirements for spacecrafts}
+\section{Space missions characteristics and requirements}
 The engineers working on the construction of spacecrafts have to face a
 multitude of requirements which are specific to this domain and cannot be found
 in other, more 'traditional' fields. Thus, in order to properly understand the
 specifics of fault-tolerant approaches used for space-related applications, this
-chapter will briefly describe these requirements.
+chapter will briefly describe these requirements and the characteristics of
+space missions.
 
 One of the most important characteristics of this domain is that it deals with a
-lot of uncertainty. While we have a strong understanding of the Earth
-environment (and even surrounding space), moving farther away from our home
-planet brings any ship in an environment where unexpected factors can influence
-a mission. Thus, the ships must be prepared to respond to conditions for which
-they might not have been initialy designed.
+considerable amount of uncertainty. While we have a strong understanding of the
+Earth environment (and even surrounding space), moving farther away from our
+home planet brings any ship in an environment where unexpected factors can
+influence the mission success. Thus, the ships must be prepared to respond to
+conditions for which they might not have been initially designed.
 
 Another important factor is the harshness of the environment and the extreme
-conditions present in space which may have dangerous effects. A few examples
+conditions present in space, which may have dangerous effects. A few examples
 include\cite{req-space-environment}:
 \begin{itemize}
   \item extremely low or extremely high temperatures (usually due to incoming
@@ -23,47 +24,48 @@ include\cite{req-space-environment}:
   disrupt the operation of electrical instruments
   \item meteoroids and orbital debris may cause damage and affect the structural
   integrity of ships if hit\footnote{The speed with which a meteoroid or debris
-  are hit is very important when it comes to the effects the encounter can have}
+  are hit is very important when it comes to the effects the encounter can
+  have.}
   \item ionizing radiation consists of high-energy particles that can `travel
-  through spacecraft material and deposit kinetic energy`.\todo{referinta sau
-  taie ghilimele}
+  through spacecraft material and deposit kinetic energy`
   \item harmful/toxic substances in the atmosphere of other planets may also
-  cause corosion and affect the proper function of components
+  cause corrosion and affect the proper function of components
 \end{itemize}
 
 Spacecrafts which are traveling far away from Earth also face other issues due
 to operating with limited ground contact (mostly because of large distances to
-our planet). According to \cite{fm-jpl}, these include:
+our planet). According to \cite{fm-jpl}, these can include:
 \begin{itemize}
   \item Extended periods with no planned contact (1 to 4 weeks)
   \item Planned contact periods may be short (1 to 2 hours)
   \item Ground may not show for planned contacts (5\% to 10\%)
-  \item Large one-way light times (minutes to hours)
-  \item Low downlink data rates (10 to 40 bps)
+  \item Large one-way light travel times, thus high communication latency
+  (minutes to hours)
+  \item Low down-link and up-link data rates (10 to 40 bps)
 \end{itemize}
 For example, light travels 2h and 50 minutes to reach Saturn from Earth so
 autonomous operation was required for probes such as Voyager when at such
 distances, as no 'live' commands could be received from Earth if any situation
-had occured.
+had occurred.
 
 Two other aspects that are characteristic to long-term space missions is that
-there are no humans onboard them (unmaned) and they need to survive without any
+there are no humans on-board them (unmanned) and they need to survive without any
 maintenance during the entire mission time, which can last for more than a
 couple of years\footnote{For example, both Voyager 1 and Voyager 2 have been
 active for more than 36 years.}. No spare parts are available and no humans can
 directly intervene to fix any issues that might appear, so the ships have to
-deal with this using other methods (e.g. redundance).
+deal with this using other methods (e.g. redundancy).
 
-Lastly, we can add a couple of other characteristics of spacecrafts: 
+Lastly, we can add a couple of other characteristics of spacecrafts:
 \begin{itemize}
   \item power supply is usually limited and the generated energy needs to be
   divided to all the instruments and components of the ship
   \item costs need to be kept down as all components are extremely expensive to
   produce
-  \item space usually needs to be restricted and its use optimized
+  \item space and weight usually need to be restricted and their use optimized
 \end{itemize}
 
 As we have seen, there are a multitude of characteristics of space missions (and
 long-term space missions in particular) and a series of specific requirements,
 all of which need to be taken into account when designing spacecrafts. Thus, all
-of these have direct influence on the fault tolerance mechanisms used.
+of these have a direct influence on the fault protection mechanisms used.
