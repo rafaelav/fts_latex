@@ -344,21 +344,13 @@ the presumption that only one system can generate failure at a given time. It
 basically tries to ensure that the MRO is completely single-fault tolerant and
 this leads to the robustness and high relability level of the architecture. As
 it was mentioned before, SPIDER was created around the idea of keeping things
-redundant and around the cross strapping concept. Among the redundancy technics
-it uses we can find:
-\begin{itemize}
-\item Block Redundancy - which ensures that a failure can be solved through the
-use of parallel elements
-\item Functional Redundancy - which permits the handling of a failure in various
-ways
-\item Cooperative Redundancy - which permits the division of a system function
-in more elements. This helps by allowing the function to be able to succeed despite
-the probability of having one of its elements fail
-\end{itemize}
+redundant and around the cross strapping concept. Among the
+redundancy technics it uses we can identify: block redundancy, functional
+redundancy, cooperative redundancy and cross strapping.
 
-The architechture of the SPIDER is hierarchicle. It has three software levels:
-the component level fault protection which is used for communication with the
-MRO hardware, the performance level fault protection which keeps track of the
+The architechture of the SPIDER is hierarhical. It has three software
+levels: the component level fault protection which is used for communication
+with the MRO hardware, the performance level fault protection which keeps track of the
 performance of each subsystem and the system level fault protection which tries
 to keep failures from happening. Depending on the type of failure, it can be
 handled by the befitting logic. In order to avoid starvation, the higher levels

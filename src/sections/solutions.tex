@@ -47,6 +47,22 @@ the execution of each of the core FM functions'}. To assure system reliability,
 the FM response needs to either clear or contain the effects of a failure before
 the failure is propagated to other components or before system issues occur.
 
+Over the years, the technologies used for fault protection have been
+significantly improved, but the fundamentals principals of spacecraft design
+have suffered little changes. For example, the fault tolerance design at the
+NASA Jet Propulsion Laboratory is based on the following \textbf{fault
+management principles} (quoted from \cite{fm-jpl}):
+\begin{enumerate}
+  \item Respond only to unacceptable conditions
+  \item Avoid hair triggers and retriggering
+  \item Tolerate false alarms
+  \item Make parameters commandable
+  \item Corroborate before severe responses
+  \item Ensure commandability and long term safety
+  \item Preserve consumables and critical data
+  \item Log events and actions
+\end{enumerate}
+
 The next step followed by the FM engineers is to design and implement software
 and hardware solutions to assure the fault protection of a spacecraft. A series
 of techniques can be used in different situations and at different moments of
@@ -72,6 +88,44 @@ be employed.
 	\end{center}
 \end{figure}
 
+The design process is one where, mainly because of costs and time restrictions,
+usually engineers start from the already developed techniques and technologies
+and improve them, increasing the safety, reliability and accuracy. For example,
+the most important strategy used for FM is \textbf{Redundancy}. This is usually
+implemented in multiple ways\cite{surv-nasa-mars}:
+\begin{itemize}
+\item Block Redundancy - which ensures that a failure can be solved through the
+use of parallel elements
+\item Functional Redundancy - which permits the handling of a failure in various
+ways
+\item Cooperative Redundancy - which permits the division of a system function
+in more elements. This helps by allowing the function to be able to succeed despite
+the probability of having one of its elements fail
+\item Cross Strapping - which permits the system to handle multiple failures
+that occur in the system.
+\end{itemize}
+
+In the following chapter, we will go into the details of some of the FM
+implementations for former NASA deep space exploration missions. However, before
+that, a look at the typical execution architecture of spacecrafts is beneficial.
+Figure~\ref{fig:spacecraft_execution_architecture} depicts such a generic
+architecture, as seen in \cite{fm-jpl}. As it can be observed, command
+sequences\footnote{Low-level commands or macros defining actions that need to be
+executed for the mission completion.} are being executed by a \textif{nominal
+sequencing engine}. Simultaneously, fault protection software is run and is
+always prepared to take over the control and execute fault protection actions,
+if the behaviours indicate the presence of a fault. Typically, the fault
+protection is handled by the Command and Control Subsystem.
+
+\begin{figure}[htb]
+	\begin{center}
+	\includegraphics[width=0.6\textwidth]{img/spacecraft_execution_architecture.pdf}
+	\caption{Typical Spacecraft Execution Architecture. \small{\textit{Source: J.
+	Day and M. Ingham, Fault management at JPL: past, present and future, 2011}}}
+	\label{fig:spacecraft_execution_architecture}
+	\end{center}
+\end{figure}
+
 The design and implementation of FM needs to be followed by Verification and
 Validation, to prove that the system complies with the system requirements and
 that the response to failures is the intended one. Besides the mission specific
@@ -81,19 +135,9 @@ Requirements} (NPR-8715.3) and the \textbf{Eastern and Western Range Safety
 Requirements} (EWR 127.1)\footnote{EWR-127.1 represents the specification of
 safety requirements for the launch site. It is being replaced with the
 \textbf{Air Force Space Command Manual Range Safety User Requirements(AFSCPCMAN
-91-710).}}. In addition, a multitude of other documents include recommendations
-for requirements related to fault protection in the case of spacecrafts. Some
-examples include: Rules for the Design, Development, Verification, and Operation
-of Flight Systems (GSFC-STD-1000E), NASA Systems Engineering Processes and
-Requirements (NPR 7123.1A), Risk Classification for NASA Payloads (NPR 8705.4)
-etc.
-
-\todo{Include the execution architecture and some text from JPL.}
-\begin{figure}[htb]
-	\begin{center}
-	\includegraphics[width=0.6\textwidth]{img/spacecraft_execution_architecture.pdf}
-	\caption{Typical Spacecraft Execution Architecture. \small{\textit{Source: J.
-	Day and M. Ingham, Fault management at JPL: past, present and future, 2011}}}
-	\label{fig:spacecraft_execution_architecture}
-	\end{center}
-\end{figure}
+91-710).}}\cite{surv-nasa-mars}. In addition, a multitude of other documents
+include recommendations for requirements related to fault protection in the case
+of spacecrafts. Some examples include: Rules for the Design, Development,
+Verification, and Operation of Flight Systems (GSFC-STD-1000E), NASA Systems
+Engineering Processes and Requirements (NPR 7123.1A), Risk Classification for
+NASA Payloads (NPR 8705.4) etc.
