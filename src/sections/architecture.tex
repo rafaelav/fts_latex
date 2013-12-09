@@ -1,12 +1,12 @@
 \section{Generic Spaceship Architecture}
 One of the most important characteristics of this domain is that spacecraft
-missions have extremely diverse purpose, so the design of each is specific and
+missions have extremely diverse purposes, so the design of each is specific and
 unique. The spacecrafts that go outside Earth's atmosphere vary from simple ones
 (e.g. satellites) to very complicated ones (e.g. deep-space missions). However,
 the principles on which their designs are based are common. Virtually all the
 spacecrafts have similar requirements regarding aspects such as power,
 telecommunications, propulsion etc. and share a general structural construction.
-Thus, in order to aid the understanding of the Fault-Tolerant approaches used
+Thus, in order to aid the understanding of the fault-tolerant approaches used
 for space missions, a generic architecture for spacecrafts is briefly described.
 
 Typically, spaceships have an architecture that contains, at minimum, 6
@@ -25,11 +25,11 @@ Figure~\ref{fig:generic_structure}.
   \item[Communication] This subsystem handles the communication between the
   spaceship and the Earth control center. The spacecraft employs transmitters
   and receivers to send and receive messages which travel through space as radio
-  waves. The communication going from a satellite to ground is called downlink
-  and the one going from ground to a satellite is called uplink. Unlike the
+  waves. The communication going from a spaceship to ground is called downlink
+  and the one going from ground to a spaceship is called uplink. Unlike the
   other modules, the Communications subsystem interfaces not only with
   components on the ship, but also with external entities.
-  \item[Power] All the components of a spacrafts Spacecraft require electrical
+  \item[Power] All the components of a spacecraft require electrical
   power for powering the various functions. This subsytem is in charge of the
   generation, storage and distribution of electrical energy in the spaceship.
   Various generation methods are employed\footnote{ For ships near the Sun,
@@ -41,7 +41,7 @@ Figure~\ref{fig:generic_structure}.
   electrical power during periods when primary power is not available.
   \item[Attitude Control] This subsystem handles the correct orientation and
   stability of the spacecraft by computing the response to external torques and
-  forces. Its main components are sensors and actuators and uses specialized
+  forces. Its main components are sensors and actuators and use specialized
   algorithms for control.
   \item[Thermal Control] As temperatures in the surrounding environment may vary
   by hundreds of degrees, the ships require this subsystem to assure that all
