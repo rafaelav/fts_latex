@@ -9,10 +9,11 @@ telecommunications, propulsion etc. and share a general structural construction.
 Thus, in order to aid the understanding of the Fault-Tolerant approaches used
 for space missions, a generic architecture for spacecrafts is briefly described.
 
-Typically, spaceships have an architecture that contains, at minimum, 5
+Typically, spaceships have an architecture that contains, at minimum, 6
 subsystems\cite{ft-space-avionics}. These are \textit{propulsion},
-\textit{communications}, \textit{power}, \textit{attitude control} and
-\textit{command \& control}, as seen in Figure~\ref{fig:generic_structure}.
+\textit{communications}, \textit{power}, \textit{attitude control},
+\textit{thermal control} and \textit{command \& control}, as seen in
+Figure~\ref{fig:generic_structure}.
 
 \begin{description}
   \item[Propulsion] This subsystem is in charge of accelerating and stabilizing
@@ -28,7 +29,7 @@ subsystems\cite{ft-space-avionics}. These are \textit{propulsion},
   and the one going from ground to a satellite is called uplink. Unlike the
   other modules, the Communications subsystem interfaces not only with
   components on the ship, but also with external entities.
-  \item[Power] All the component of a spacrafts Spacecraft require electrical
+  \item[Power] All the components of a spacrafts Spacecraft require electrical
   power for powering the various functions. This subsytem is in charge of the
   generation, storage and distribution of electrical energy in the spaceship.
   Various generation methods are employed\footnote{ For ships near the Sun,
@@ -39,9 +40,14 @@ subsystems\cite{ft-space-avionics}. These are \textit{propulsion},
   electrical bus to other spacecraft components. Batteries are used to provide
   electrical power during periods when primary power is not available.
   \item[Attitude Control] This subsystem handles the correct orientation and
-  stability of the spacecraft by responding to external torques and forces. Its
-  main components are sensors and actuators and uses specialized algorithms for
-  control.
+  stability of the spacecraft by computing the response to external torques and
+  forces. Its main components are sensors and actuators and uses specialized
+  algorithms for control.
+  \item[Thermal Control] As temperatures in the surrounding environment may vary
+  by hundreds of degrees, the ships require this subsystem to assure that all
+  the components have a proper temperature. It can be passive, such as
+  insulations, special materials etc., or active, employing electrical heaters
+  to manipulate the temperature of the components.
   \item[Command/Control] All the aspects related to the spaceship's control are
   handled by this subsystem. Its main tasks include: receives commands from
   the communications subsystem; validates, decodes and distributes the commands
@@ -51,10 +57,18 @@ subsystems\cite{ft-space-avionics}. These are \textit{propulsion},
   subsystem is in charge of system health-monitoring and recovery from failures.
 \end{description}
 
+Besides these main components, most of the deep space exploration ships have a
+\textbf{payload of scientific instruments} (usually simply refered to
+as \textit{payload}), that are used to gather various types of data from the
+surrounding environment. A few examples of scientific instruments used are
+magnetometers, energetic particle detectors, temperature sensors,
+spectrometers, radiation sensors, high resolution cameras.
+
 \begin{figure}[htb]
-\begin{center}
-\includegraphics[width=0.92\textwidth]{img/generic_structure.pdf}
-\caption{Components of Generic Spacecraft}
-\label{fig:generic_structure}
-\end{center}
+	\begin{center}
+	\includegraphics[width=0.92\textwidth]{img/generic_structure.pdf}
+	\caption{Components of Generic Spacecraft}
+	\label{fig:generic_structure}
+	\end{center}
 \end{figure}
+\todo{Add missing 2 components}
