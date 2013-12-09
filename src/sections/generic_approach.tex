@@ -1,5 +1,4 @@
-\section{Approach to fault tolerance in spacecrafts}
-
+\section{General approach to fault protection in spacecrafts}
 The characteristics of space exploration missions have always required
 innovative fault management (FM) strategies\footnote{The term \textit{Fault
 Management} is often used interchangeably with the term \textit{Fault
@@ -16,7 +15,7 @@ According to \cite{nasa-fm-handbook}, a space missions FM engineer has the role
 of analysing mission attributes and characteristics and defining FM
 requirements, as well as developing hardware and software architectures that
 provide fault protection and assure the success of missions. This process is
-ilustrated in Figure~\ref{fig:fm_design}.
+illustrated in Figure~\ref{fig:fm_design}.
 
 \begin{figure}[htb] 
 	\begin{center}
@@ -36,10 +35,10 @@ to perform an analysis of the system architecture to identify the mission
 characteristics which are definitory for the fault protection functions. Fault
 management will need to be implemented throughout the system, however they need
 to take into account restrictions enforced by the mission characteristics. For
-example, in the case of deep space exploration mission, which have delayed and
+example, in the case of deep space exploration missions, which have delayed and
 infrequent contact with the mission command on Earth, or during time critical
-steps of missions (e.g. planetary atmospheric entry), fault management
-\textbf{response latency} is critical. According to the NASA Fault Management
+steps of missions (e.g. planetary atmospheric entry), the \textbf{response
+latency} of fault management is critical. According to the NASA Fault Management
 Handbook \cite{nasa-fm-handbook}, response latency is \textit{'the time from the
 occurrence of a fault to the correction of the failure condition'} and is
 \textit{'built from the various mission and system characteristics that impact
@@ -48,13 +47,13 @@ the FM response needs to either clear or contain the effects of a failure before
 the failure is propagated to other components or before system issues occur.
 
 Over the years, the technologies used for fault protection have been
-significantly improved, but the fundamental principals of spacecraft design
-have suffered little changes. For example, the fault tolerance design at the
-NASA Jet Propulsion Laboratory is based on the following \textbf{fault
-management principles} (quoted from \cite{fm-jpl}):
+significantly improved, but the fundamental principals of spacecraft design have
+suffered little changes. For example, the fault tolerance design at the NASA Jet
+Propulsion Laboratory is based on the following \textbf{fault management
+principles} (quoted from \cite{fm-jpl}):
 \begin{enumerate}
   \item Respond only to unacceptable conditions
-  \item Avoid hair triggers and retriggering
+  \item Avoid hair triggers and re-triggering
   \item Tolerate false alarms
   \item Make parameters commandable
   \item Corroborate before severe responses
@@ -81,7 +80,7 @@ be employed.
 
 \begin{figure}[htb]
 	\begin{center}
-	\includegraphics[width=0.9\textwidth]{img/fault_protection_hierarchy.png}
+	\includegraphics[width=0.8\textwidth]{img/fault_protection_hierarchy.png}
 	\caption{Fault protection general hierarchy. \small{\textit{Source: J.
 	Day and M. Ingham, Fault management at JPL: past, present and future, 2011}}}
 	\label{fig:fault_protection_hierarchy}
@@ -89,10 +88,11 @@ be employed.
 \end{figure}
 
 The design process is one where, mainly because of costs and time restrictions,
-usually engineers start from the already developed techniques and technologies
-and improve them, increasing the safety, reliability and accuracy. For example,
-the most important strategy used for FM is \textbf{Redundancy}. This is usually
-implemented in multiple ways\cite{surv-nasa-mars}:
+usually engineers start from already developed and previously used techniques
+and technologies and improve them, increasing their safety, reliability and
+accuracy. For example, the most important strategy used for FM is
+\textbf{Redundancy}, since the first space missions. This is usually implemented
+in multiple ways\cite{surv-nasa-mars}:
 \begin{itemize}
 \item Block Redundancy - which ensures that a failure can be solved through the
 use of parallel elements
@@ -117,7 +117,7 @@ always prepared to take over the control and execute fault protection actions,
 if the behaviours indicate the presence of a fault. Typically, the fault
 protection is handled by the Command and Control Subsystem.
 
-\begin{figure}[htb]
+\begin{figure}[ht]
 	\begin{center}
 	\includegraphics[width=0.6\textwidth]{img/spacecraft_execution_architecture.pdf}
 	\caption{Typical Spacecraft Execution Architecture. \small{\textit{Source: J.
@@ -126,18 +126,18 @@ protection is handled by the Command and Control Subsystem.
 	\end{center}
 \end{figure}
 
-The design and implementation of FM needs to be followed by Verification and
-Validation, to prove that the system complies with the system requirements and
-that the response to failures is the intended one. Besides the mission specific
-requirements, all space missions have to respect some general safety
-requirements. Mandatory ones include the \textbf{NASA General Safety Program
-Requirements} (NPR-8715.3) and the \textbf{Eastern and Western Range Safety
-Requirements} (EWR 127.1)\footnote{EWR-127.1 represents the specification of
-safety requirements for the launch site. It is being replaced with the
-\textbf{Air Force Space Command Manual Range Safety User Requirements(AFSCPCMAN
-91-710).}}\cite{surv-nasa-mars}. In addition, a multitude of other documents
-include recommendations for requirements related to fault protection in the case
-of spacecrafts. Some examples include: Rules for the Design, Development,
-Verification, and Operation of Flight Systems (GSFC-STD-1000E), NASA Systems
-Engineering Processes and Requirements (NPR 7123.1A), Risk Classification for
-NASA Payloads (NPR 8705.4) etc.
+The design and implementation of fault management needs to be followed by
+Verification and Validation, to prove that the system complies with the system
+requirements and that the response to failures is the intended one. Besides the
+mission specific requirements, all space missions have to respect some general
+safety requirements. Mandatory ones include the \textbf{NASA General Safety
+Program Requirements} (NPR-8715.3) and the \textbf{Eastern and Western Range
+Safety Requirements} (EWR 127.1)\footnote{EWR-127.1 represents the specification
+of safety requirements for the launch site. It is being replaced with the
+\textbf{Air Force Space Command Manual Range Safety User Requirements}
+(AFSCPCMAN 91-710).}\cite{surv-nasa-mars}. In addition, a multitude of other
+documents include recommendations for requirements related to fault protection
+in the case of spacecrafts. Some examples include: Rules for the Design,
+Development, Verification, and Operation of Flight Systems (GSFC-STD-1000E),
+NASA Systems Engineering Processes and Requirements (NPR 7123.1A), Risk
+Classification for NASA Payloads (NPR 8705.4) etc.

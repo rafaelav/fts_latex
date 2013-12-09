@@ -7,7 +7,8 @@ the principles on which their designs are based are common. Virtually all the
 spacecrafts have similar requirements regarding aspects such as power,
 telecommunications, propulsion etc. and share a general structural construction.
 Thus, in order to aid the understanding of the fault-tolerant approaches used
-for space missions, a generic architecture for spacecrafts is briefly described.
+for space missions, a generic architecture for spacecrafts is briefly described
+below.
 
 Typically, spaceships have an architecture that contains, at minimum, 6
 subsystems\cite{ft-space-avionics}. These are \textit{propulsion},
@@ -25,28 +26,28 @@ Figure~\ref{fig:generic_structure}.
   \item[Communication] This subsystem handles the communication between the
   spaceship and the Earth control center. The spacecraft employs transmitters
   and receivers to send and receive messages which travel through space as radio
-  waves. The communication going from a spaceship to ground is called downlink
-  and the one going from ground to a spaceship is called uplink. Unlike the
+  waves. The communication going from a spaceship to ground is called down-link
+  and the one going from ground to a spaceship is called up-link. Unlike the
   other modules, the Communications subsystem interfaces not only with
   components on the ship, but also with external entities.
   \item[Power] All the components of a spacecraft require electrical
-  power for powering the various functions. This subsytem is in charge of the
+  power for powering the various functions. This subsystem is in charge of the
   generation, storage and distribution of electrical energy in the spaceship.
-  Various generation methods are employed\footnote{ For ships near the Sun,
+  Various generation methods are employed\footnote{For ships near the Sun,
   solar panels are frequently used to generate electrical power. In more distant
-  locations, for example Jupiter, might employ a Radioisotope Thermoelectric
-  Generator (RTG) to generate electrical power.}, the most common one involving
-  solar cells. The power is passed through a power distribution unit over an
-  electrical bus to other spacecraft components. Batteries are used to provide
-  electrical power during periods when primary power is not available.
+  locations, for example Jupiter, a Radioisotope Thermoelectric Generator (RTG)
+  might be employed to generate electrical power.}, the most common one
+  involving solar cells. The power is passed through a power distribution unit
+  over an electrical bus to other spacecraft components. Batteries are used to
+  provide electrical power during periods when primary power is not available.
   \item[Attitude Control] This subsystem handles the correct orientation and
   stability of the spacecraft by computing the response to external torques and
-  forces. Its main components are sensors and actuators and use specialized
+  forces. Its main components are sensors and actuators and it uses specialized
   algorithms for control.
   \item[Thermal Control] As temperatures in the surrounding environment may vary
   by hundreds of degrees, the ships require this subsystem to assure that all
   the components have a proper temperature. It can be passive, such as
-  insulations, special materials etc., or active, employing electrical heaters
+  insulation, special materials etc., or active, employing electrical heaters
   to manipulate the temperature of the components.
   \item[Command/Control] All the aspects related to the spaceship's control are
   handled by this subsystem. Its main tasks include: receives commands from
@@ -58,11 +59,11 @@ Figure~\ref{fig:generic_structure}.
 \end{description}
 
 Besides these main components, most of the deep space exploration ships have a
-\textbf{payload of scientific instruments} (usually simply refered to
-as \textit{payload}), that are used to gather various types of data from the
+\textbf{payload of scientific instruments} (usually simply referred to as
+\textit{Payload}), that are used to gather various types of data from the
 surrounding environment. A few examples of scientific instruments used are
-magnetometers, energetic particle detectors, temperature sensors,
-spectrometers, radiation sensors, high resolution cameras.
+magnetometers, energetic particle detectors, temperature sensors, spectrometers,
+radiation sensors, high resolution cameras.
 
 \begin{figure}[htb]
 	\begin{center}
@@ -71,4 +72,3 @@ spectrometers, radiation sensors, high resolution cameras.
 	\label{fig:generic_structure}
 	\end{center}
 \end{figure}
-\todo{Add missing 2 components}
