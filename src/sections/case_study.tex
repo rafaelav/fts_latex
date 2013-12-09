@@ -38,13 +38,18 @@ surface which needed to be adeqate for the temperatures and radiation it was
 facing. Internally generated heat was enclosed with the help of special blankets
 which were insulating. Also, most of rge subsystemes had replacement heaters.
 
-The attitude and articulation control (AACS) system was used in order to keep
-the antenna in the right position needed for communication. The AACS was also
+The attitude control system (ACS) was used in order to keep
+the antenna in the right position needed for communication. The ACS was also
 in charge of keeping or modifying the spacecraft trajectory. A diagram of the
-AACS can be seen in Fig.
+ACS can be seen in Fig~\ref{fig:voyager_bd}.
 
-FIg. - Block diagram of the AACS\missingfigure{Lipseste ceva, nu-i asa?}
-
+\begin{figure}[htb]
+	\begin{center}
+	\includegraphics[width=0.92\textwidth]{img/voyagerACS.png}
+	\caption{Attitude Control Subsystem block diagram\cite{tvs}}
+	\label{fig:voyager_bd}
+	\end{center}
+\end{figure}
 
 The spacecrafts needs to keep track of its position by using the Sun and a start
 (Canopus). The sensors that keep track of both the Sun and Canopus are block
@@ -289,7 +294,7 @@ relay station for other missions.
 The objectives of the MRO where complex and the probability of failure was high
 because of this. There were multiple things that could go wrong with the
 mission, considering the complexity of its overall goals and functionality
-expectations \todo{Sigur e ok citarea asta?} \cite{tvs}.
+expectations \cite{tvs}.
 
 First of all, the mission was supposed to last about 5.4 years. The system on
 the spacecraft was supposed to have an up-time as close as possible to 100\%
@@ -316,9 +321,17 @@ ground operations where needed in case the system did not recognise some
 possibly threatening conditions that could appear. The main advantage of the
 SPIDER is that it can actually prevent the system from entering massive failure
 without the need to wait for the ground crew to notice and react to the
-problems.
+problems. The decission process of the SPIDER can be seen in
+Fig.~\ref{fig:spider}.
 
-FIG - Generic SPIDER Decission process \cite{e-seale}
+\begin{figure}[htb]
+	\begin{center}
+	\includegraphics[width=0.5\textwidth]{img/spider.png}
+	\caption{The generic decission process of the SPIDER\cite{surv-nasa-mars}}
+	\label{fig:spider}
+	\end{center}
+\end{figure}
+
 
 The SPIDER ensures that the fault responses are general. For example, if the MRO
 finds itself in a position in which a fault is detected, than it automatically
@@ -400,18 +413,20 @@ case the high gain antenna would not function properly, then the low gain
 antenna would perform its tasks (even if this one had lower data rates it could
 still be enough so that the mission wouldn't be a failure).
 
+The surface fault protection architecture of the rovers can be divided into
+local and system level fault protection, each of them dealing with various kinds of
+problems. The local and system level fault protection can be seen in detail in
+Fig~\ref{fig:rovers}.
+\cite{fprot}
+\todo{Care e faza cu zona asta? - solved? citeste acum}
 
-????
-
-The local and system level fault protection can be seen in Fig. \cite{fprot}
-\todo{Care e faza cu zona asta?}
-
-
-?????
-
-
-\missingfigure{}
-FIG. Overview of the surface fault protection
+\begin{figure}[htb]
+	\begin{center}
+	\includegraphics[width=0.92\textwidth]{img/rovers.png}
+	\caption{Attitude Rovers surface fault protection\cite{surv-nasa-mars}}
+	\label{fig:rovers}
+	\end{center}
+\end{figure}
 
 There are more general capabilities of the fault protection architecture used in
 the case of the rovers. First of all, the ground teams can monitor the data
