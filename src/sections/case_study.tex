@@ -287,7 +287,7 @@ as comparing results to expected outputs can prove helpful.
 \subsection{Mars Reconnaissance Orbiter}
 
 The Mars Reconnaissance Orbiter (MRO)\cite{mro-nasa} was launched on the 12th of
-August, 2005 and it was one of the first spacecrafts entering Mars' orbit.
+August, 2005 and it was one of the first spacecrafts to enter Mars' orbit.
 
 Its journey to Mars lasted seven months and it took six more months afterwards
 in order for it to reach its science orbit. The MRO was created with the purpose
@@ -306,39 +306,38 @@ the spacecraft was supposed to have an up-time as close as possible to 100\%
 during this mission. This is hard to achieve because all possible failures need
 to be prevented or handled without losing functionality or precious data.
 
-An analysis of the fault pretection architecture, the effectiveness of this
+An analysis of the fault protection architecture, the effectiveness of this
 architecture as well as a categorization of the fault protection capabilities of
 the MRO are described in detail in \cite{surv-nasa-mars}.
 
-In order to assure that no big failures cand occur and that, despite its
-complexity, the system will work accordingly in order to achieve the mission's
-goals, a semi-autonomuos fault protection software (SPIDER - SPacecraft Imbedded
+In order to assure that no big failures could occur and that, despite its
+complexity, the system would work accordingly in order to achieve the mission's
+goals, a semi-autonomous fault protection software (SPIDER - SPacecraft Imbedded
 Distributed Error Response) has been developed for the MRO. It has been
-developed in C-language with the possibility of re-use for any other future
-missions. SPIDER can support redundancy and cross strapping tasks, requirements
-which the MRO is supposed to meet.
+developed using the C-language with the possibility of re-use for any other
+future missions. SPIDER can support redundancy and cross strapping tasks,
+requirements which the MRO is supposed to meet.
 
 Despite it's advanced capabilities and the fact that it acts as a first
-responder to erros and handles most of them, SPIDER was not design to function
-on its own. It still needed help from the ground in order for the system to be
-set back in a normal state for the cases when it entered a safe mode. Also,
-ground operations where needed in case the system did not recognise some
-possibly threatening conditions that could appear. The main advantage of the
-SPIDER is that it can actually prevent the system from entering massive failure
-without the need to wait for the ground crew to notice and react to the
-problems. The decission process of the SPIDER can be seen in
-Fig.~\ref{fig:spider}.
+responder to errors and handles most of them, SPIDER was not designed to
+function on its own. It still needed help from the ground in order for the
+system to be set back to a normal state for the cases when it entered a safe
+mode. Also, ground operations where needed in case the system did not recognize
+some possibly threatening conditions that could appear. The main advantage of
+the SPIDER is that it can actually prevent the system from entering massive
+failure without the need to wait for the ground crew to notice and react to the
+problems. A brief diagram depicting the decision process of SPIDER can be seen
+in Fig.~\ref{fig:spider}.
 
 \begin{figure}[htb]
 	\begin{center}
 	\includegraphics[width=0.5\textwidth]{img/spider.png}
-	\caption{The generic decission process of the SPIDER\small{\textit{ Source: E.
-	Scale, The evolution of a spider fault protection, incremental development, and
-	the mars reconnaissance orbiter mission, 2003}}}
+	\caption{The generic decision process of the SPIDER. \small{\textit{Source: E.
+	Scale, The evolution of a {SPIDER} fault protection, incremental development,
+	and the {Mars Reconnaissance Orbiter} mission, 2003}}}
 	\label{fig:spider}
 	\end{center}
 \end{figure}
-
 
 The SPIDER ensures that the fault responses are general. For example, if the MRO
 finds itself in a position in which a fault is detected, then it automatically
@@ -349,31 +348,31 @@ ground level by the team in charge after following a defined protocol.
 The SPIDER ensures that the MRO is not affected by fails at any given time, with
 the presumption that only one system can generate failure at a given time. It
 basically tries to ensure that the MRO is completely single-fault tolerant and
-this leads to the robustness and high relability level of the architecture. As
+this leads to the robustness and high reliability level of the architecture. As
 it was mentioned before, SPIDER was created around the idea of keeping things
-redundant and around the cross strapping concept. Among the
-redundancy technics it uses we can identify: block redundancy, functional
-redundancy, cooperative redundancy and cross strapping.
+redundant and around the cross strapping concept. Among the redundancy
+techniques it uses we can identify: block redundancy, functional redundancy,
+cooperative redundancy and cross strapping.
 
-The architechture of the SPIDER is hierarhical. It has three software
-levels: the component level fault protection which is used for communication
-with the MRO hardware, the performance level fault protection which keeps track of the
-performance of each subsystem and the system level fault protection which tries
-to keep failures from happening. Depending on the type of failure, it can be
-handled by the befitting logic. In order to avoid starvation, the higher levels
-in the hierarchy are allowed to call on to the lower levels in order to assign
-them specific tasks, but they cannot take priority of the tasks which
-already are executing in these levels.
+The architecture of the SPIDER is hierarchical. It has three software levels:
+the \textbf{component level} fault protection which is used for communication
+with the MRO hardware, the \textbf{performance level} fault protection which
+keeps track of the performance of each subsystem and the \textbf{system level}
+fault protection which tries to keep failures from happening. Depending on the
+type of failure, it can be handled by the befitting logic. In order to avoid
+starvation, the higher levels in the hierarchy are allowed to call on to the
+lower levels in order to assign them specific tasks, but they cannot take
+priority of the tasks which are already executing in these levels.
 
-The SPIDER has been thorughly tested before being integrated on the MRO, but a
+The SPIDER has been thoroughly tested before being integrated on the MRO, but a
 final proof of its capability was the fact that, even though the MRO has
 encountered quite a few failures during the mission (e.g. memory corruption,
-downlink connectivity failure, etc.), it was capable to recover and to achieve
+down-link connectivity failure, etc.), it was capable to recover and to achieve
 the mission's goals.
 
 \subsection{Mars Exploration Rovers}
 
-NASA has launched in 2003 the twin rovers, Opportunity and Spirit
+NASA has launched, in 2003, the twin rovers, Opportunity and Spirit
 \cite{mer-nasa}, with the purpose of gaining more insight about past water
 activity on the red planet and if there where, at some point, conditions that
 could favor life on our neighbor planet. The planned mission was supposed to
@@ -381,8 +380,8 @@ last for about 3 months from the moment the rovers would land. However, they
 have exceeded any expectations both as far as their durability is concerned as
 well as the discoveries they have made.
 
-Spirit has collected evidences that, in the past, Mars was much wetter than we
-see it know. Also, it collected information about the wind on the red planet.
+Spirit has collected evidences that, in the past, Mars was much better than we
+see it now. Also, it collected information about the winds on the red planet.
 The rover has been silent as of March 2010 and the ground team has ceased to try
 to contact it since May 2011 when its mission was closed and considered
 complete.
@@ -398,31 +397,29 @@ provided in \cite{surv-nasa-mars}.
 The rovers needed to enter into a sleep mode during the days in order for them
 to be able to recharge their batteries. In this state their CPU would be powered
 off, but the hardware still needed to maintain the safe thermal and power states
-(the temperatures on Mars can be quite extreme - from negative
-107$\,^{\circ}\mathrm{C}$ up to over positive
-30$\,^{\circ}\mathrm{C}$\footnote{http://en.wikipedia.org/wiki/Climate\_of\_Mars}).
+\footnote{The temperatures on Mars can be quite extreme - from negative
+107$\,^{\circ}\mathrm{C}$ up to over positive 30$\,^{\circ}\mathrm{C}$ -
+http://en.wikipedia.org/wiki/Climate\_of\_Mars}).
 
 Upon waking from the sleep mode, the rovers were expected to start the
 communication without any help from ground operation teams on Earth. As a fault
-protection measure, if during the rover's initialization a server error occured,
+protection measure, if during the rover's initialization a server error occurred,
 the reset of the system would be postponed for a pre-defined amount of time. A
 software health function was also used in order to check for any lingering or
-suspended tasks. For the communication system, redundancy was used such that, in
-case the high gain antenna would not function properly, then the low gain
-antenna would perform its tasks (even if this one had lower data rates it could
+suspended tasks. For the communication system, redundancy was used such so that,
+in case the high gain antenna would not function properly, then the low gain
+antenna could perform its tasks (even if this one had lower data rates it could
 still be enough so that the mission wouldn't be a failure).
 
-The surface fault protection architecture of the rovers can be divided into
-local and system level fault protection, each of them dealing with various kinds of
-problems. The local and system level fault protection can be seen in detail in
-Fig~\ref{fig:rovers}.
-\cite{fprot}
-\todo{Care e faza cu zona asta? - solved? citeste acum}
+The fault protection architecture of the rovers can be divided into local and
+system-level fault protection, each of them dealing with various kinds of
+problems\cite{fprot}. A diagram of the local and system level fault protection
+can be seen in Figure~\ref{fig:rovers}.
 
 \begin{figure}[htb]
 	\begin{center}
 	\includegraphics[width=0.92\textwidth]{img/rovers.png}
-	\caption{Attitude Rovers surface fault protection\small{\textit{ Source: D.
+	\caption{Rovers surface fault protection overview. \small{\textit{ Source: D.
 	Clark, C. Brennan and M. Jaunich, Survey of Nasa Mars Exploration Missions -
 	Software Fault Protection Architecture, 2010}}}
 	\label{fig:rovers}
@@ -437,28 +434,31 @@ type of errors they observe.
 Since the rovers have an algorithm that controls automatically the wake up and
 shutdown procedures, it means that a low energy fault can be avoided. The
 algorithm only allowed the rovers to work when they had enough energy to do
-this, thus abnormal terminations or uncapability to save data before entering
-sleep mode could be avoided. 
+this, thus abnormal terminations or incapability to save data before entering
+sleep mode could be avoided. The rovers were also tolerant to failure because,
+for example, in case they did not stock up enough energy in order to function
+properly, then the system would not allow them to wake up from the sleep mode
+and by doing this it avoided the failure of letting them work without
+appropriate power.
 
 A plus to the fact that the rovers needed to enter sleep mode everyday and
-basically shutdown for a period of time was software
-rejuvenation\footnote{http://en.wikipedia.org/wiki/Software\_aging}. Memory
-leaks could be removed through this process.
+basically shutdown for a period of time was software rejuvenation\footnote{As a
+way of helping against software aging -
+http://en.wikipedia.org/wiki/Software\_aging}. Memory leaks could be removed
+through this process.
 
-The rovers were also tolerant to failure because, for example, in case they did
-not stock up enough energy in order to function properly, than the system would
-not allow them to wake up from the sleep mode and by doing this it avoided the
-failure of letting them work without appropriate power. Aside from this, they
-benefited from the presence of a navigation algorithm that looked for possible
-hazards on the rovers' paths and tried to avoid them by chosing between posible
-identified routes.
+Aside from this power-related fault protection, they benefited from the presence
+of a navigation algorithm that looked for possible hazards on the rovers' paths
+and tried to avoid them by choosing between possible identified routes.
 
-Even thogh testing was developed previous to mission launch, complete fault
-avoidance could not be guaranteed. The ground team could identify that after 17
-sols (Martian days) one of the rovers was rebooting over and over. They managed
-to identify the problem as being the fact that when a file needed to be deleted
-from RAM, even though the link to it was lost, the size of the table of contents
-of the RAM was not decreased so the system managed to consume all the RAM space
-available after some time. The problem was solved from the ground when the team
-instructed the software to not use the memory and use another one instead. This
-prevented the failure of the mission.
+Even though testing was developed previous to mission launch, complete fault
+avoidance could not be guaranteed. For example, the ground team could identify
+that after 17 sols (Martian days) one of the rovers was rebooting over and over.
+They managed to identify the problem as being the fact that, when a file needed
+to be deleted from RAM, even though the link to it was lost, the size of the
+table of contents of the RAM was not decreased so the system managed to consume
+all the RAM space available after some time. The problem was solved from the
+ground when the team instructed the software to not use the software in memory
+and use another one instead. This prevented the failure of the mission.
+
+\todo {Mini concluzie?}
