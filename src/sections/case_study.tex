@@ -1,169 +1,175 @@
 \section{Fault Tolerance in Specific Space Missions}
-
- 
 \subsection{Voyager Missions}
 
-Voyager 1 and 2 \cite{vo1-nasa}\cite{vo2-nasa} were created in order to explore
-the outer solar
-system\footnote{http://science.nasa.gov/planetary-science/focus-areas/outer-solar-system/}
+Voyager 1 and 2 \cite{vo1-nasa}\cite{vo2-nasa} are 2 NASA missions created in
+order to explore the outer Solar System
+\footnote{http://science.nasa.gov/planetary-science/focus-areas/outer-solar-system/}
 The missions were possible due to a rare planetary alignment. Voyager 2 targeted
 Jupiter, Saturn, Uranus and Neptune, while Voyager 1 targeted Jupiter and
-Saturn. They both continued on to chart the far edges of our Solar System.
+Saturn. After visiting these planets, they both continued on to chart the far
+edges of our Solar System.
 
 There are quite a few works which take a closer look at the Voyager missions.
-These missions have brought humanity an inimaginable boost of knowledge about
-our Solar System and even beyond. R. L. Heacock presents in one of his
-papers~\cite{tvs} various engineering aspects of the two spacecrafts.
+These missions have brought humanity an unimaginable boost of knowledge about
+our Solar System and even beyond. R. L. Heacock presents, in one of his
+papers~\cite{tvs}, various engineering aspects of the two spacecrafts.
 
 The two spacecrafts have been launched into space on 20th of August,
-respectively 5th of September in 1977. Their trajectories were controled through
-the use of the gravity field and orbital velocity of the planets. This was the
-key factor which allowed the encounter with multiple planets. The way in which
-the planets where aligned at that time has allowed that even one spacecraft
-could pass by more planets and it also helped by reducing the time needed to
-reach these planets (e.g. from 30 years for a flight to Neptun, the travel time
-was reduced to only 12 years).
+respectively 5th of September in 1977. Their trajectories were controlled
+through the use of the gravity field and orbital velocity of the planets. This
+was the key factor which allowed the encounter with multiple planets. The way in
+which the planets where aligned at that time has allowed for each spacecraft to
+pass by more planets and it has also helped by reducing the time needed to reach
+these planets (e.g. from 30 years normally for a flight to Neptune, the travel
+time was reduced to only 12 years).
 
 Before the mission started, hundreds of computer simulations for the
-trajectories were carried out. Also, research was made in order to design a self
-test and repair (STAR) system for the spacecrafts, as well as an on board
-computer access telemetry system (CATS). The latter allowed STAR to monitor on
-board the performances or failures of the spaceship and, in the case it would be
-needed, to take measures for remedying the problem.
+trajectories were carried out. Also, to assure fault protection, research was
+made in order to design a self test and repair (STAR) system for the
+spacecrafts, as well as an on-board computer access telemetry system (CATS). The
+latter allowed STAR to monitor the on-board performances or failures of the
+spaceship and, in case it would be needed, to take measures for remedying the
+problem.
 
-The special needs the spacecrafts had defined parts of their appeareance. For
-example, Voyager needed a large diameter antenna since the communication needed
-to be possible despite the very long distance to Earth. It also had an external
-surface which needed to be adeqate for the temperatures and radiation it was
-facing. Internally generated heat was enclosed with the help of special blankets
-which were insulating. Also, most of the subsystemes had replacement heaters.
+The spacecrafts had special needs that defined parts of their appearance.
+For example, Voyager needed a large diameter antenna since the communication
+needed to be possible despite the very long distance to Earth. It also had an
+external surface which needed to be adequate for the temperatures and radiation
+it was facing. Internally generated heat was enclosed with the help of special
+blankets which were insulating. Also, most of the subsystems had replacement
+heaters.
 
-The attitude control system (ACS) was used in order to keep
-the antenna in the right position needed for communication. The ACS was also
-in charge of keeping or modifying the spacecraft trajectory. A diagram of the
-ACS can be seen in Fig~\ref{fig:voyager_bd}.
+The attitude control system (ACS) was used in order to keep the antenna in the
+right position needed for communication. The ACS was also in charge of keeping
+or modifying the spacecraft's trajectory. A block diagram of the ACS can be seen
+in Figure~\ref{fig:voyager_bd}.
 
 \begin{figure}[htb]
 	\begin{center}
 	\includegraphics[width=0.92\textwidth]{img/voyagerACS.png}
-	\caption{Attitude Control Subsystem block diagram\small{\textit{ Source: R.L.
-	Heacock, The Voyager Spacecraft, 1980}}}
+	\caption{The block diagram of Attitude Control Subsystem on
+	Voyager. \small{\textit{ Source: R.L. Heacock, The Voyager Spacecraft, 1980}}}
 	\label{fig:voyager_bd}
 	\end{center}
 \end{figure}
 
-The spacecrafts needed to keep track of its position by using the Sun and a
-start (Canopus). The sensors that keep track of both the Sun and Canopus are block
-redundant in order to ensure that the spacecraft will be able to compute its
+The spacecrafts kept track of their position by using the Sun and a star
+(Canopus). The sensors that keep track of both the Sun and Canopus are block
+redundant in order to ensure that the spacecrafts will be able to compute their
 position and that complete failure in doing so would be unlikely. There is,
-additionaly, a periodic callibration of the Sun sensor which allows the keeping
-of accuracy needed in order for the spacecraft to position the scan platform in
-order to point of the remote sensing instruments. In case the sensor that keeps
-track of the Sun position is not working, the spacecraft has an inbuilt solar
+additionally, a periodic calibration of the Sun sensor. This allows keeping the
+accuracy level needed in order for the spacecraft to position the scan platform
+so that it accurately points the remote sensing instruments. In case the sensor
+that keeps track of the Sun position is not working and the solar panels cannot
+be pointed in the right direction, the spacecraft has an inbuilt solar
 independent power system given by the radio-isotope thermo-electric generators.
-This ensures that even if and when the spacecraft cannot use the Sun as a power
-suply, it can still mentain functionality. Great amount of testing was done in
-order to ensure that, in case of an accident at launch time, the radioactive
-material which existed on board the spacecraft would be contained and it would
-not represent any danger. This is possible because the shells that contain the
-plutonion spheres were wrapped in an impregnated graphite yarn which provides a
-good energy absorption in the case of an accident.
+This ensures that even if the spacecraft cannot use the Sun as a power supply,
+it can still maintain functionality. 
 
-Since the spacecraft needed to wait for almost three hours for a response from
-the ground base, it was obvious from the beginning that it would need to have at
-least some operations done autonomously. However, control parameters and even
-control laws could be re-programmed in flight in case it is necessary. This has
-allowed solving several inflight problems that occured throughout the
-years~\cite{litty}.
+Great amount of testing was also done in order to ensure that, in case of an
+accident at launch time, the radioactive material which existed on board the
+spacecraft would be contained and would not represent any danger. This is
+possible because the shells that contain the plutonium spheres were wrapped in
+an impregnated graphite yarn which provided a good energy absorption in the case
+of an accident.
+
+Since in the later stages of the mission, the spacecraft needed to wait for
+almost three hours for a response from the ground base, it was obvious from the
+beginning that it would need to have at least some operations done autonomously.
+However, control parameters and even control laws could be re-programmed in
+flight in case it is necessary. This has allowed solving several in-flight
+problems that have occurred throughout the years~\cite{litty} simply by sending
+software patches.
 
 The computer and control subsystem fault correction and detection routines
-incorporate internal error and power power levels checks, received command and
-transmitted signal loss, spacecrafts manouvre faults, attitude control subsystem
+incorporate internal error and power levels checks, received command and
+transmitted signal loss, spacecrafts maneuver faults, attitude control subsystem
 failures and many others. For example, the command loss routine verifies if any
 commands have been given to the spaceship. A timer is used in order to make
-checks to see if commands have reached the spaceship or not. If a command has
-been given and received, than the timer is reset. In case the command is either
-not received or was not given when expected, the command loss rutine stars,
-meaning that a series of reconfigurations are initiated.
+checks to see if commands have reached the spaceship components or not. If a
+command has been given and received, then the timer is reset. In case the
+command is either not received or was not given when expected, the command loss
+routine stars, meaning that a series of re-configurations are initiated.
 
-A high redundancy of subsystems and hardware was used when designing the two
-spacecrafts. This has proven to be a good safety meassure since the receiver for
-Voyager 2 has mulfunctioned and almost could have caused the failure of the
-mission. However, the problem has been identified fast and the spacecraft has
-been functioning on the back-up receiver since 1978. The attitude control subsystem
-is made of redundant computers (one of them is a standby which is ready to take
-the other's place if needed). The command and control subsytem also has
-redundancy incorporated in it. However, in this case, the redundant computer
-monitors the functional computer.
-
-A description of the error detection mechanism for the attitude control subsytem
-is given in~\cite{ft-space-avionics}. It consists in:
+A description of the error detection mechanism for the attitude control subsystem
+is given in~\cite{ft-space-avionics}. It consists of:
 \begin{itemize}
   \item failure of receiving a 'I am healthy' report every 2 seconds by the
-  comand control subsystem
+  command control subsystem
   \item loss of references to Canopus or the Sun
-  \item failure of re-writting memory every 10 hours
+  \item failure of re-writing memory every 10 hours
   \item taking more time to adjust trajectory than expected
   \item gyro failure
   \item power supply failure
   \item parity error on commands received from the command and control subsystem
   \item unresponsiveness to commands
-  \item incorrect sequance of commans
+  \item incorrect sequence of commands
 \end{itemize}
 
-Voyager 1 and 2 have achieved their goals and surpassed them. They have made
-unexpected discoveries (e.g. at least nine active volcanos on
-Io\footnote{http://en.wikipedia.org/wiki/Io\_(moon)}~\cite{tvs}) and are
-currently the most distand human made objects. Voyager 1 has already left our
-solar
-system\footnote{http://www.space.com/22729-voyager-1-spacecraft-interstellar-space.html}
-and is currently travelling through interstellar space.
+A high redundancy of subsystems and hardware was used when designing the two
+spacecrafts. This has proven to be a good safety measure since, for example,
+the receiver for Voyager 2 has malfunctioned and almost could have caused the
+failure of the mission. However, the problem has been identified fast and the
+spacecraft has been functioning on the back-up receiver since 1978. The attitude
+control subsystem is made of redundant computers (one of them is a standby which
+is ready to take the other's place if needed). The command and control subsystem
+also has redundancy incorporated in it. However, in this case, the redundant
+computer monitors the functional computer.
+
+Voyager 1 and 2 have achieved their goals and have surpassed them. They have
+made unexpected discoveries (e.g. at least nine active volcanoes on
+Io\footnote{Io is one of the Jupiter moons}~\cite{tvs}) and are currently the
+most distant human made objects. Voyager 1 has already left our solar system in
+2012\footnote{http://www.space.com/22729-voyager-1-spacecraft-interstellar-space.html}
+and is currently traveling through interstellar space.
 
 \subsection{Cassini-Huygens}
 
-The Cassini-Huygens~\cite{ch-nasa} mission was to study Saturn, its moons and
-its rings. The two names that form the name of the spacecraft are present because
-Cassini represents the NASA\footnote{http://www.nasa.gov/}-suplied spacecraft
-while Hygens represents the lander designed by the European Space Agency.
+The Cassini-Huygens~\cite{ch-nasa} mission was a NASA-ESA joint mission aimed to
+study Saturn, its moons and its rings. The two names that form the name of the
+spacecraft are present because Cassini represents the NASA-supplied spacecraft
+while Huygens represents the lander designed by the European Space Agency.
+Cassini was the first spacecraft to actually orbit Saturn~\cite{ch-nasa}.
+
+An interesting description of the fault tolerant design of both the Cassini
+spacecraft and the Huygens probe is given in D.P Siewiorek and P.
+Narasimhan's article~\cite{ft-space-avionics}. The Cassini orbiter was also
+developed with possibility of self-recovery in mind, since it would take awhile
+before any answer could be transmitted back from Earth.
 
 The Huygens probe~\cite{hygens} has landed on Titan on 14th January 2005. It's
 purpose was to make a variety of measurements. It was formed out of various
 subsystems. Among them we can find the ones that are in charge of overseeing the
 mechanical and thermal components, probe-relay data, command and data management
-and electrical power. The states of its subsystems are influenced by the mode in
-which the probe is at a particular moment. The modes it can enter are: cruise,
-coast, entry and decent. Huygens' mission aimed to last for the 2 and a half
-hours it took for it to decent in the athmosphere of Titan.
-
-An interesting description of the fault tolerant design of both the Cassini
-spacecraft and the Huygens probe is given in D.P Siewiorek and P.
-Narasimhan's article~\cite{ft-space-avionics}. 
+and electrical power. The states of each of its subsystems are influenced by the
+mode in which the probe is at a particular moment of the mission. The modes it
+can enter are: cruise, coast, entry and decent. Huygens' mission aimed to last
+for the 2.5 hours it took for it to descend in the atmosphere of Titan.
 
 The Huygens' fault tolerant design was focused on autonomy. This was needed
 because the probe could not have been commanded after its detach from the
-spacecraft. The probe had a completely redundant electrical architecture. The
-software architecture also used redundancy, most specifically it used block
-redundancy. It also had two identical command and data management units, a
-triply redundant mission timer unit as well as a triply redundant central
-acceleration sensor unit. Huygens also had duble redundant accelerometers and
-double redundant proximity sensors.
+spacecraft, due to distance from Earth. The probe had a completely redundant
+electrical architecture (most specifically it used block redundancy) and the
+software architecture also used redundancy. It also had two identical command
+and data management units, a triply redundant mission timer unit as well as a
+triply redundant central acceleration sensor unit. Huygens also had double
+redundant accelerometers and double redundant proximity sensors.
 
-The command and data management units have been developed with only small
-diferences which aimed to avoid common-mode failures. They both execute their
-own software as to be able to run on their own, if needed, in order to keep the
-mission afloat. In case there would be a problem that can be generated by the
-temporarily loss of the telemetry link, a fault could be avoided since the two
-replicas had a delay between their telmetry of 6 seconds. Both of the two units
-do checks and consider themselves invalid in the case they discover that they have
-a two bit error in the same word in the memory or an under-voltage value of the
-power line.
+The 2 identical command and data management units have been developed with only
+small differences that aimed to avoid common-mode failures. They both execute
+their own software as to be able to run on their own, if needed, in order to
+keep the mission afloat. Also, a delay was introduced so that, in case there
+would be a problem generated by the temporarily loss of the telemetry link, a
+fault could be avoided since the two replicas had a delay between their telemetry
+of 6 seconds. Both of the two units do checks and consider themselves invalid in
+the case they discover that they have a two bit error in the same word in the
+memory or an under-voltage value of the power line.
 
 In order to ensure that the experimental results and collected data were safe,
-Huygens probe was not the only one keeping them in memory. They were, in fact,
+Huygens probe was not the only sending them to Earth. They were, in fact, also
 kept as a copy in the Cassini orbiter so that, in any case, they could be
-transmited to the ground team on Earth.
+transmitted to the ground team on Earth.
 
-Cassini was the first spacecraft to actually orbit Saturn~\cite{ch-nasa}.
 Cassini's fault protection mechanisms~\cite{cassini} aimed to avoid the
 possibility of having a single point of failure somewhere in the systems which
 formed the orbiter. Other goals the fault protection mechanisms had where to
@@ -173,20 +179,16 @@ case these faults would take place in regions which were independent.
 The approach the Cassini system fault protection used was that it was driven by
 the priority of the faults identified and it could work on the recovery of only
 one fault at the time. More faults could have the same priority assigned to
-them, but they would be served in a first come first served manner. The way in which
-priority was assigned to faults is that the ones which would take the most to be
-solved would be assigned a lower priority while the most time-critical ones
-would have the highest priority~\cite{ft-space-avionics}.
-
-The Cassini orbiter was also eveloped with posibility of self-recovery in mind,
-since it would take awhile before any answer could be transmited back from
-Earth.
+them, but they would be served in a first come first served manner. The way in
+which priority was assigned to faults is that the ones which would take the most
+to be solved would be assigned a lower priority while the most time-critical
+ones would have the highest priority~\cite{ft-space-avionics}.
 
 The primary mission of the Cassini orbiter ended on 30 June 2008. It did achieve
 all the original goals and then moved on to take on a new mission - to observe
 and gather data about the seasonal changes brought by the Sun's changing angle
-on Saturn. It also continued to study the rings and moons of Saturn, sending
-back to Earth priceless information and knoledge about the seventh planet from
+on Saturn. It has also continued to study the rings and moons of Saturn, sending
+back to Earth priceless information and knowledge about the seventh planet from
 the Sun~\cite{ch-nasa}.
 
 \subsection{Mars Climate Orbiter}
@@ -195,78 +197,78 @@ program which included the Mars Global Surveyor as well as Mars Polar Lander. It
 was launched in 1998 with the main objective of studying the climate of Mars. It
 aimed to monitor atmospheric dust and water vapor as well as taking pictures of
 the planet's surface in order to gain insight on the climatic changes. The hope
-was to gather evidences that would suport the theory of existing water
+was to gather evidences that would support the theory of existing water
 underneath the surface of the planet.
 
 MCO was also designed to serve as a communication relay for the Mars Polar
 Lander, however after the Lander's mission, it was supposed to conduct its own
 main mission independently.
 
-After its nine months jurney to Mars, MCO was lost beacuse it missed its planned
-altitude orbit and fell into the Martian atmosphere where it was distroyed.
+After its nine months journey to Mars, MCO was lost because it missed its planned
+orbit altitude and fell into the Martian atmosphere where it was destroyed.
 
 The problem identified in the NASA Mishap Investigation Board Phase I
 Report~\cite{mco-rep} was that the MCO failed to use metric units in the coding
 of a ground software file used in trajectory models. Other causes that
-contributed to the failure of the mission included system engineering, traning
+contributed to the failure of the mission included system engineering, training
 and organizational factors.
 
 In order to understand better the circumstances that lead to the failure of this
-mission, we need to take a closer look at the Attitude Control System and
-the fault protection architecture of the MCO~\cite{surv-nasa-mars}.
+mission, we need to take a closer look at the Attitude Control System and the
+fault protection architecture of the MCO~\cite{surv-nasa-mars}.
 
 The MCO's Attitude Control System contained a Sun sensor, an inertial
-measurement unit, a star camera and reaction wheels. The MCO was controlable in
-roll, pitch and yaw so that it can adjust its alttitude, to perform trajectory
-maneuvres and to achieve Mars Orbit Inseration. It was designed so that it could
-use the gravity force of Mars in order to adjust to the needed velocity which
-could allow it to keep the desired orbit and altitude. The design included
-rocket engine modules which allowed this as well as serving as elements that
-dissipated any angular momentum which could be accumulated in the reaction
-wheels. The Spacecraft Performance Analysis Software (SPAS) was used to
-calculate the angular momentum desaturation, however it was not using the
-correct units of measure (error in the Newton to lb-f conversion). This has lead
-to the MCO estimating badly its alttitude and orbit.
+measurement unit, a star camera and reaction wheels. The MCO was controllable in
+roll, pitch and yaw so that it could adjust its altitude, perform trajectory
+maneuvers and achieve Mars Orbit Insertion. It was designed so that it could use
+the gravity force of Mars in order to adjust to the needed velocity which could
+allow it to keep the desired orbit and altitude. The design included rocket
+engine modules which allowed this as well as serving as elements that dissipated
+any angular momentum which could be accumulated in the reaction wheels. The
+Spacecraft Performance Analysis Software (SPAS) was used to calculate the
+angular momentum desaturation, however it was not using the correct units of
+measure (error in the Newton to lb-f conversion). This has lead to MCO
+estimating badly its altitude and orbit and thus, its failure to maintain
+orbit.
 
 The fault protection capabilities were unsatisfying at a number of levels in
-this mission. First of all, there was an error in the human managemnt process.
+this mission. First of all, there was an error in the human management process.
 The calculation of the automatic momentum desaturation involved a human
 constant, because people where involved in loading the information to servers,
-also in retrieving it from servers and uplinking it to the MCO. The teams
+also in retrieving it from servers and up-linking it to the MCO. The teams
 dealing with the information where not specifically the ones who introduced the
 error, however they could have observed the problem and could have found a
-solution to solve it. This proves the existance of a fault in the human-system
-interaction. 
+solution to solve it. This proves the existence of a fault in the human-system
+interaction. This could have been avoided by developing a better system that
+would allow people to assess the correctness of the output data based on the
+input they are giving. It could be a software solution that would act either as
+verifier (just calculate and report the expected results) or as a checker that
+would identify the inconsistency and report it.
 
-This could be avoided by developing a better system that would allow people to
-asses the correctens of the output data based on the input they are giving. It
-could be a software solution that would act either as verifier (just calculate
-and report the expected results) or as a checker that would identify the
-inconcistency and report it.
-
-The critical problem in the MCO case was the lack of an adequate convertor
+The critical problem in the MCO case was the lack of an adequate converter
 between the Newtons and lb-f. The software used for the MCO was partly carried
-over from another mission (THe Mars Global Surveyor). The privios mission
-considered the convertor, however it was not imported for the MCO mission by
-mistake. The fault could have been avoided if there would have been thorough
-testing after the importing of the already existing software. If the re-used
-functions would have been inspected with attention and tests would have been
-developed in order to check the correct functionality in the new context, the
-fault could have been discovered and solved.
+over from another mission (The Mars Global Surveyor). The previous mission used
+a converter, however it was not imported for the MCO mission by mistake. The
+fault could have been avoided if there would have been thorough testing after
+the importing of the already existing software. If the re-used functions would
+have been inspected with attention and tests would have been developed in order
+to check the correct functionality in the new context, the fault could have been
+discovered and solved.
 
 The expectation to have a software system with no bugs or problems is quite
 unrealistic. However this should not affect the success of missions. The MCO was
-already calculating the angular momentum desaturations and afterwards downlinked
-it to the ground base. At that point the Spacecraft Performance Analysis Softer
-was used in order to calculate the angular momentum desaturation value without
-making the correct conversion between Newtons and lb-f. Howver, the result would
-be provided to the team in charge and only afterwards the plan for the future
-actions would be uplinked to the spacecraft. In this case, another solution for
-fault avoidance would have been the limitation or elimination of the need of the
-spacecraft to relay on external systems and the human intervention. Basically,
-if the MCO would have been designed as to be able to calculate its own position
-and only then cross check it with the available data provided by the ground
-team, it would have been possible to at least notice and report the problem.
+already calculating the angular momentum desaturation and afterwards
+down-linked it to the ground base. At that point the Spacecraft Performance
+Analysis Software was used in order to calculate the angular momentum
+desaturation value without making the correct conversion between Newtons and
+lb-f. However, the result would be provided to the team in charge and only
+afterwards the plan for the future actions would be up-linked to the spacecraft.
+In this case, another solution for fault avoidance would have been the
+limitation or elimination of the need of the spacecraft to rely on external
+systems and human intervention. Basically, if the MCO would have been designed
+to be able to calculate its own position and only then cross check it with the
+available data provided by the ground team, it would have been possible to at
+least notice and report the problem.
 
 In order to have a good failure tolerance, it was decided that for future
 spacecrafts it would be advised to use redundant and independent components
@@ -276,11 +278,12 @@ differences in the values. In the case of multiple such components, a voting
 could be implemented in order to rule out the modules that provide wrong
 results.
 
-Since this case is mainly a failure caused by the inadequate re-use of
-software, it can be stated that such errors can be avoided through the use of
-independent evaluation and validation of the re-used software. The use of
-regression testing~\footnote{http://en.wikipedia.org/wiki/Regression\_testing}
-as well as comparing results to expected outputs can prove helpful.
+Since this case is mainly a failure caused by the inadequate re-use of software,
+it can be stated that such errors can be avoided through the use of independent
+evaluation and validation of the re-used software. The use of regression
+testing~\footnote{http://en.wikipedia.org/wiki/Regression\_testing} as well
+as comparing results to expected outputs can prove helpful.
+
 \subsection{Mars Reconnaissance Orbiter}
 
 The Mars Reconnaissance Orbiter (MRO)\cite{mro-nasa} was launched on the 12th of
